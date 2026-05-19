@@ -4,4 +4,4 @@ WORKDIR /var/www/html
 COPY . .
 
 COPY src ./
-EXPOSE 443:80   
+EXPOSE 443:80  

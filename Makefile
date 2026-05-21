@@ -1,6 +1,6 @@
 LOGIN = hgatarek
 DATA_PATH = /home/$(LOGIN)/data
-COMPOSE_FILE = ./src/docker-compose.yaml
+COMPOSE_FILE = ./srcs/docker-compose.yaml
 
 all:
 	mkdir -p ${DATA_PATH}/mariadb

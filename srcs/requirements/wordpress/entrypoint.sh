@@ -9,6 +9,8 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
     WP_ADMIN_PWD=$(cat /run/secrets/wp_admin_password | tr -d '\r')
     WP_USER_PWD=$(cat /run/secrets/wp_user_password | tr -d '\r')
 
+    sleep 10
+    
     wp config create \
         --dbname="$MYSQL_DATABASE" \
         --dbuser="$MYSQL_USER" \

@@ -14,7 +14,7 @@ RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
     -out /etc/ssl/certs/nginx-selfsigned.crt \
     -subj "/C=PL/ST=Warsaw/L=Warsaw/O=42/OU=42/CN=hgatarek.42.fr/UID=hgatarek"
 
-COPY ./nginx.conf /etc/nginx/sites-available/default
+COPY conf/nginx.conf /etc/nginx/sites-available/default
 
 EXPOSE 443
 

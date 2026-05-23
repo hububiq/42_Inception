@@ -2,9 +2,9 @@ FROM debian:bookworm
 
 RUN apt-get update && apt-get install -y mariadb-server && rm -rf /var/lib/mysql/*
 
-COPY ./mariadb-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY conf/mariadb-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY ./entrypoint.sh /usr/local/bin/
+COPY tools/entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
 

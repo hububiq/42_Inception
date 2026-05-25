@@ -8,7 +8,7 @@ all:
 	docker compose -f ${COMPOSE_FILE} up -d --build
 
 down:
-	docker compose -f ${COMPSE_FILE} down
+	docker compose -f ${COMPOSE_FILE} down
 
 clean:
 	docker compose -f ${COMPOSE_FILE} down -v

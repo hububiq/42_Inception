@@ -2,27 +2,28 @@
 
 # Inception
 
-### Description
+## Description
 This project covered setting up small Docker infrastracture with docker-compose, introducing me to the world of containerization. Objective and intentional complexity was to build layers of images manually with DockerCLI and to start up nginx (as reverse proxy), Wordpress and MariaDB services from scratch using pure Bash scripts and SQL injection. 
 
-Handy syllabus:
-	- Virtual Machines vs Docker
-		**Virtual Machines** are the substitutes of real physical computers, working as a detached, isolated environment. They host heavy operating systems, stacked with components and full array of features. They utilize hardware-level virtualization. A program called a Hypervisor allocates physical hardware (RAM, CPU). Because each VM must boot its own complete, heavy Guest Operating System, they are resource-intensive and slow to start.
-		**Docker**, while still assuring the isolation, was invented to introduce containerisation with services of the user's choice with fast building time, giving 100% reproducibility and compliance for developing projects, regardless of system the developer is working on. Docker uses host machine kernel which makes it lightweight and handy tool for quick deployments.
+### Virtual Machines vs Docker
+
+**Virtual Machines** are the substitutes of real physical computers, working as a detached, isolated environment. They host heavy operating systems, stacked with components and full array of features. They utilize hardware-level virtualization. A program called a Hypervisor allocates physical hardware (RAM, CPU). Because each VM must boot its own complete, heavy Guest Operating System, they are resource-intensive and slow to start.
+**Docker**, while still assuring the isolation, was invented to introduce containerisation with services of the user's choice with fast building time, giving 100% reproducibility and compliance for developing projects, regardless of system the developer is working on. Docker uses host machine kernel which makes it lightweight and handy tool for quick deployments.
 	
-	- Secrets vs Environment Variables
-		**Secrets** are the secure solution for sensitive credentials. Instead of being injected into the system environment, Secrets are mounted directly into a temporary, in-memory filesystem (RAM/tmpfs) inside the container (e.g., /run/secrets/). They are never written to the container's hard drive and cannot be seen via docker inspect, ensuring that passwords remain completely hidden and secure.
-		**Environemnt Variables** are set of variables that are exported to the operating system for usage (general settings), adding extra layer of scalability and flexibility - developer doesn't need to change env everywhere in the project, they are expanded with $. They are fundamentally insecure for passwords, as anyone running docker inspect or viewing a PHP crash dump can read them in plain text.
+### Secrets vs Environment Variables
+**Secrets** are the secure solution for sensitive credentials. Instead of being injected into the system environment, Secrets are mounted directly into a temporary, in-memory filesystem (RAM/tmpfs) inside the container (e.g., /run/secrets/). They are never written to the container's hard drive and cannot be seen via docker inspect, ensuring that passwords remain completely hidden and secure.
+**Environemnt Variables** are set of variables that are exported to the operating system for usage (general settings), adding extra layer of scalability and flexibility - developer doesn't need to change env everywhere in the project, they are expanded with $. They are fundamentally insecure for passwords, as anyone running docker inspect or viewing a PHP crash dump can read them in plain text.
 	
-	- Docker Network vs Host Network
-		**Docker Network** is isolated, user-defined communication environment created by docker-compose.yaml for containers to communicate to each other using their service names, without exposing database to the host. Without network, they don't see each other. They also can communicate with outside network if the port is opened.
-		Host Network
-		**Host Network** takes away the isolation. Container shares the host machine's IP.
+### Docker Network vs Host Network
+**Docker Network** is isolated, user-defined communication environment created by docker-compose.yaml for containers to communicate to each other using their service names, without exposing database to the host. Without network, they don't see each other. They also can communicate with outside network if the port is opened.
+**Host Network**
+Host Network takes away the isolation. Container shares the host machine's IP.
 	
-	- Docker Volumes vs Bind Mounts
-		In Docker, data inside a container is ephemeral (it disappears when the container is deleted). To keep your files safe, you must use one of these two storage mechanisms.
-		**Docker Volumes** are directories on host hard drive designated to hold the data which belongs to container - they are mutually mapped. They are completely managed by Docker Engine and assure persisting the data even after switching off the containers.
-		**Bind Mounts** link a specific path on your host machine directly to a path in the container. From Volumes it differs in a way that the data belongs to the host. If you edit a file on your computer, it changes instantly inside the container
+### Docker Volumes vs Bind Mounts
+In Docker, data inside a container is ephemeral (it disappears when the container is deleted). To keep your files safe, you must use one of these two storage mechanisms.
+
+**Docker Volumes** are directories on host hard drive designated to hold the data which belongs to container - they are mutually mapped. They are completely managed by Docker Engine and assure persisting the data even after switching off the containers.
+**Bind Mounts** link a specific path on your host machine directly to a path in the container. From Volumes it differs in a way that the data belongs to the host. If you edit a file on your computer, it changes instantly inside the container
 
 
 ### Instructions

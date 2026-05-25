@@ -1,6 +1,6 @@
-*** User Guide ***
+# User Guide
 
-**1. System Overview**
+### 1. System Overview
 
 This project deploys a fully isolated, three-tier web infrastructure. The ecosystem is composed of three interconnected services:
 
@@ -10,7 +10,7 @@ This project deploys a fully isolated, three-tier web infrastructure. The ecosys
 
     MariaDB (The Vault): The backend database engine. It operates completely hidden from the Internet, securely storing all website content, user accounts, and configuration settings.
 
-**2. Launching and Stopping the Infrastructure**
+### 2. Launching and Stopping the Infrastructure
 
 The entire project is controlled using simple commands via the Makefile in the root directory:
 
@@ -20,7 +20,7 @@ The entire project is controlled using simple commands via the Makefile in the r
 
     To Factory Reset: Run make fclean. Warning: This destroys the containers, cleans the cache, and permanently deletes all saved database and website data.
 
-**3. Accessing the Platform**
+### 3. Accessing the Platform
 
 Once the deployment is finished, you can interact with the platform using a standard web browser.
 
@@ -30,7 +30,7 @@ Once the deployment is finished, you can interact with the platform using a stan
 
     Security Prompt Notice: The system uses a self-signed TLS certificate for local encryption. Your browser may flag the connection as "Not Private." Simply click "Advanced" and choose to proceed safely to the site.
 
-**4. Managing Configurations and Passwords**
+### 4. Managing Configurations and Passwords
 
 To maintain strict security, configuration settings and sensitive passwords are kept completely separate.
 
@@ -40,7 +40,7 @@ To maintain strict security, configuration settings and sensitive passwords are 
 
     Making Changes: If you wish to change usernames or passwords, you must update these files before running the make command to deploy the infrastructure.
 
-**5. Verifying System Health**
+### 5. Verifying System Health
 
 To confirm that the infrastructure is operating correctly, open your terminal and run the following status command:
 code Bash

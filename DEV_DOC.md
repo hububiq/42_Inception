@@ -1,6 +1,6 @@
-*** Developer Guide ***
+# Developer Guide 
 
-**1. Environment Preparation**
+### 1. Environment Preparation
 
 System Requirements:
 You must have Docker Engine and Docker Compose (v2) installed on your system.
@@ -15,7 +15,7 @@ To access the application via the browser, you need to route the project's domai
 Configuration Files:
 Before building the project, ensure you have created and configured your .env file (using an .env.example template) and generated the necessary password .txt files inside the secrets/ directory.
 
-**2. Infrastructure Deployment**
+### 2. Infrastructure Deployment
 
 The entire lifecycle of the containers is automated through the Makefile located in the root directory.
 
@@ -25,7 +25,7 @@ The entire lifecycle of the containers is automated through the Makefile located
 
     make fclean: Performs a hard reset. This command stops all services, prunes the Docker cache, and permanently wipes the physical data folders from the host machine.
 
-**3. Useful CLI Commands**
+### 3. Useful CLI Commands
 
 Once the project is running, you can manage and debug the infrastructure using standard Docker commands:
 
@@ -37,7 +37,7 @@ Once the project is running, you can manage and debug the infrastructure using s
 
     Check existing volumes: docker volume ls
 
-**4. Persistent Storage Architecture**
+### 4. Persistent Storage Architecture
 
 Docker containers are ephemeral by nature, meaning any data stored inside them is lost when the container is deleted. To achieve true data persistence, this project utilizes Docker Named Volumes configured with local driver options to bind directly to the host's hard drive:
 

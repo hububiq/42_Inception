@@ -1,8 +1,8 @@
-***This project has been created as part of the 42 curriculum by hgatarek***
+*This project has been created as part of the 42 curriculum by hgatarek*
 
-*** Inception ***
+# Inception
 
-**Description**
+### Description
 This project covered setting up small Docker infrastracture with docker-compose, introducing me to the world of containerization. Objective and intentional complexity was to build layers of images manually with DockerCLI and to start up nginx (as reverse proxy), Wordpress and MariaDB services from scratch using pure Bash scripts and SQL injection. 
 
 Handy syllabus:
@@ -25,7 +25,7 @@ Handy syllabus:
 		**Bind Mounts** link a specific path on your host machine directly to a path in the container. From Volumes it differs in a way that the data belongs to the host. If you edit a file on your computer, it changes instantly inside the container
 
 
-**Instructions**
+### Instructions
 
 1. Host Network Configuration
 
@@ -104,7 +104,7 @@ You can manage the lifecycle of the infrastructure using the provided Makefile r
 
     make fclean: Performs a complete deep clean. It executes make clean, prunes the Docker system cache, and permanently deletes the physical volume folders from the host machine (/home/login/data/). Use this for a completely fresh start.
 
-**Resources**
+### Resources
 
 https://nginx.org/en/docs/
 
@@ -117,7 +117,7 @@ https://mariadb.com/docs/
 
 https://apxml.com/courses/docker-for-ml-projects/chapter-3-managing-ml-data-containers/bind-mounts-vs-volumes
 
-**AI Usage**
+### AI Usage
 	Throughout the Inception project, I utilized AI (LLMs) as an interactive debugging assistant and a tool to deepen my understanding of system administration concepts. Specifically, I used AI to help structure my Bash entrypoint.sh scripts and to troubleshoot complex container communication issues.
 	I used AI to analyse my container logs. It helped me to investigate and debug the problem with connecting Wordpress to MariaDB. Turned out I didn't include working directory for wordpress in Dockerfile and my database didn't see any of them. 
 	Because of this missing line, WordPress was downloading to the wrong root directory, leaving the shared volume empty for NGINX. In browser it kept returning 403 Forbidden error since there was nothing to show from Wordpress site. 

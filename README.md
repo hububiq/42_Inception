@@ -18,8 +18,7 @@ This project covered setting up small Docker infrastracture with docker-compose,
 ### Docker Network vs Host Network
 
 **Docker Network** is isolated, user-defined communication environment created by docker-compose.yaml for containers to communicate to each other using their service names, without exposing database to the host. Without network, they don't see each other. They also can communicate with outside network if the port is opened.
-**Host Network**
-Host Network takes away the isolation. Container shares the host machine's IP.
+**Host Network** takes away the isolation. Container shares the host machine's IP.
 	
 ### Docker Volumes vs Bind Mounts
 
@@ -69,7 +68,6 @@ MYSQL_USER=wp_user
 B. Create the Secrets:
 
 Create a folder named secrets/ at the root of the repository and generate your password files. You can do this quickly via the terminal:
-code Bash
 
 ```bash
 mkdir -p secrets
